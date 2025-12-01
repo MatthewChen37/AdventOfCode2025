@@ -36,7 +36,7 @@ int mainPart1() {
 	return 0;
 }
 
-int main() {
+int mainPart2() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
