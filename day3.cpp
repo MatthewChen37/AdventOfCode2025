@@ -64,7 +64,7 @@ void printStack(stack<int> s) { // Pass by value to create a copy
 	cout << reversed << endl;
 }
 
-int main() {
+int mainPart2() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	
