@@ -139,7 +139,6 @@ int mainPart1() {
 	int n = coords.size();
 	cout << "Number of coordinates: " << n << endl;
 
-	// vector<vector<double>> dists(n, vector<double>(n, INT_MAX));
 	int MAX_HEAP_SIZE = 100000;
 	struct Compare {
 		bool operator()(vector<double>&a, vector<double>&b) {
@@ -149,7 +148,6 @@ int mainPart1() {
 
 	priority_queue<vector<double>, vector<vector<double>>, Compare> dist_min_heap;
 
-	// Make dist matrix
 	for (int i = 0; i < n; ++i) {
 		for (int j = i + 1; j < n; j++) {
 			// top smallest elements
@@ -199,7 +197,7 @@ bool isSizeN(UnionFind uf, int n) {
 	return false;
 }
 
-int main() {
+int mainPart2() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
@@ -217,7 +215,6 @@ int main() {
 	int n = coords.size();
 	cout << "Number of coordinates: " << n << endl;
 
-	// vector<vector<double>> dists(n, vector<double>(n, INT_MAX));
 	struct Compare {
 		bool operator()(vector<double>&a, vector<double>&b) {
 			return a[0] > b[0]; // NOTICE THE CHANGE HERE
@@ -226,10 +223,9 @@ int main() {
 
 	priority_queue<vector<double>, vector<vector<double>>, Compare> dist_max_heap;
 
-	// Make dist matrix
 	for (int i = 0; i < n; ++i) {
 		for (int j = i + 1; j < n; j++) {
-			// top smallest elements
+			// MAX HEAP THIS TIME
 			dist_max_heap.push({distFunc(coords[i], coords[j]), static_cast<double>(i), static_cast<double>(j)});
 		}
 	}
